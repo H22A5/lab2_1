@@ -42,4 +42,18 @@ class BinarySearchTest {
         assertEquals(expectedPosition, result.getPosition());
         assertEquals(expectedFound, result.isFound());
     }
+
+    @Test
+    void shouldFindElementWhichIsTheFirstElementInMultiElementArray() {
+        int key = 1;
+        int[] seq = {1, 2};
+        int expectedPosition = 0;
+        boolean expectedFound = true;
+
+        SearchResult result = BinarySearch.search(key, seq);
+
+        assertEquals(expectedPosition, result.getPosition());
+        assertEquals(expectedFound, result.isFound());
+        assertEquals(key, seq[result.getPosition()]);
+    }
 }

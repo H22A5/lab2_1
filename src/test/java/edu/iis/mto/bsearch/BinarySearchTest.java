@@ -84,4 +84,17 @@ class BinarySearchTest {
         assertEquals(expectedFound, result.isFound());
         assertEquals(key, seq[result.getPosition()]);
     }
+
+    @Test
+    void shouldNotFindElementInMultiElementArray() {
+        int key = 0;
+        int[] seq = {1, 2};
+        int expectedPosition = -1;
+        boolean expectedFound = false;
+
+        SearchResult result = BinarySearch.search(key, seq);
+
+        assertEquals(expectedPosition, result.getPosition());
+        assertEquals(expectedFound, result.isFound());
+    }
 }
